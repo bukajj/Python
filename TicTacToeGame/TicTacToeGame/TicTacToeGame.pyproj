@@ -11,6 +11,8 @@
     <OutputPath>.</OutputPath>
     <Name>TicTacToeGame</Name>
     <RootNamespace>TicTacToeGame</RootNamespace>
+    <InterpreterId>
+    </InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,6 +23,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="TicTacToeTest.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="TicTacToeGame.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
