@@ -1,5 +1,3 @@
-import random
-
 class BlackJackGame():
     def __init__(self, name, bet, deck_amount):
         self.__name=name
@@ -8,6 +6,7 @@ class BlackJackGame():
         for card in self.__cards:
             card[1]=4*deck_amount
         self.__player_cards=[]
+        self.__player_hand=[]
         self.__computer_cards=[]
         self.__player_weight=[]
         self.__computer_weight = 0
@@ -42,10 +41,10 @@ class BlackJackGame():
     def count(self, type):
         pass
 
-    def set_player_cards(self,fst,snd):
+    def set_player_cards(self,*args):
         pass
 
-    def set_computer_cards(self,fst,snd):
+    def set_computer_cards(self,*args):
         pass
 
     def get_player(self):
