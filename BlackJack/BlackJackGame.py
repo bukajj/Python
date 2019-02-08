@@ -9,7 +9,7 @@ class BlackJackGame():
             card[1]=4*deck_amount
         self.__player_cards=[]
         self.__computer_cards=[]
-        self.__player_weight=0
+        self.__player_weight=[]
         self.__computer_weight = 0
 
     def hit(self):
@@ -24,6 +24,9 @@ class BlackJackGame():
     def insurance(self):
         pass
 
+    def split(self):
+        pass
+
     def show(self):
         pass
 
@@ -34,6 +37,27 @@ class BlackJackGame():
         pass
 
     def check(self):
+        pass
+
+    def count(self, type):
+        pass
+
+    def set_player_cards(self,fst,snd):
+        pass
+
+    def set_computer_cards(self,fst,snd):
+        pass
+
+    def get_player(self):
+        pass
+
+    def get_computer(self):
+        pass
+
+    def get_player_weight(self):
+        pass
+
+    def get_computer_weight(self):
         pass
 
 
