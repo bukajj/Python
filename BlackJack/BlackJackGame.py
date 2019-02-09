@@ -1,7 +1,9 @@
 import random
 
-class BlackJackGame():
-    def __init__(self, name, bet, deck_amount):
+
+class BlackJackGame:
+
+    def __init__(self, name='test', bet=1, deck_amount=1):
         self.__name=name
         self.__bet=bet
         self.__cards=[['2',1,2],['3',1,3],['4',1,4],['5',1,5],['6',1,6],['7',1,7],['8',1,8],['9',1,9],['10',1,10],['Jack',1,10],['Queen',1,10],['King',10],['A',1,11]]
@@ -93,13 +95,14 @@ class BlackJackGame():
     def set_player_cards(self,*args):
         self.__player_cards.clear()
         self.__player_hand.clear()
-        self.__cards.append([])
+        self.__cards=[[]]
         for card in args:
             if card>12 or card<0:
                 self.__player_cards.clear()
                 self.__player_hand.clear()
                 break
             else:
+                self.__player_hand.append(card)
                 self.__player_cards[0].append(card)
                 self.__cards[card][1]-=1
 
