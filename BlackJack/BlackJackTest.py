@@ -4,7 +4,7 @@ from BlackJackGame import BlackJackGame
 
 class BlackJackTest(unittest.TestCase):
     def test_count(self):
-        test=BlackJackGame()
+        test=BlackJackGame('test',1,1)
         test.set_player_cards(2,6)
         self.assertTrue(test.count('p') != 10)
         test.set_player_cards(2, 15)
@@ -14,7 +14,7 @@ class BlackJackTest(unittest.TestCase):
         test.set_player_cards(-22, 5)
         self.assertTrue(test.count('p') == 0)
         test.set_player_cards(12, 12)
-        self.assertTrue(test.count('p') == 2)
+        self.assertTrue(test.count('p') == 12)
         test.set_player_cards(12, 11)
         self.assertTrue(test.count('p') == 21)
 
@@ -22,11 +22,11 @@ class BlackJackTest(unittest.TestCase):
         test = BlackJackGame('test', 1, 1)
         test.set_player_cards(2, 6)
         test.hit('p')
-        self.assertTrue(test.get_player()[0].count()==3)
+        self.assertTrue(len(test.get_player()[0])==3)
         test.hit('p')
-        self.assertTrue(test.get_player()[0].count() == 4)
+        self.assertTrue(len(test.get_player()[0]) == 4)
         test.hit('p')
-        self.assertTrue(test.get_player()[0].count() == 5)
+        self.assertTrue(len(test.get_player()[0]) == 5)
 '''
     def test_check(self):
         test = BlackJackGame('test', 1, 1)
