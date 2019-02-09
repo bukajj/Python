@@ -26,42 +26,86 @@ class BlackJackGame:
                 self.__cards[card][1] -= 1
 
             else:
-                card = random() * 12
-                while (self.__cards[card][1] > 0):
-                    card = random() * 12
+                card=int(random.random()*12)
+                while (self.__cards[card][1] == 0):
+                    card=int(random.random()*12)
                 self.__player_hand.append(card)
                 self.__player_cards[1].append(card)
                 self.__cards[card][1] -= 1
         else:
-            card = random() * 12
-            while (self.__cards[card][1] > 0):
-                card = random() * 12
+            card=int(random.random()*12)
+            while (self.__cards[card][1] == 0):
+                card=int(random.random()*12)
             self.__computer_cards.append(card)
             self.__cards[card][1] -= 1
 
     def stand(self):
-        pass
+        if self.is_busted()[0]==True:
+            return False
+        else:
+            while self.count('c')<17:
+                self.hit('c')
+            return self.check()
 
     def double_down(self):
-        pass
+        self.hit('p')
+        self.__bet*=2
+        if self.is_busted()[0]==True:
+            return False
+        else:
+            return self.check()
 
     def insurance(self):
-        pass
+        if self.__computer_cards[0]!=12:
+            return (False,False)
+        if self.__cards[self.__computer_cards[1]][2]==10:
+            return (True,True)
+        else:
+            return (True,False)
 
     def split(self):
-        pass
+        if self.__player_cards==[]:
+            return False
+        if self.__player_hand[0]==self.__player_hand[1]:
+            self.__player_cards=[[self.__player_hand[0]], [self.__player_hand[1]]]
+            self.__player_hand=self.__player_cards[0]
+            return True
+        else:
+            return False
 
     def show(self):
-        pass
+        print(self.__name + ': ' + str(self.__player_cards))
+        print('Computer: ' + str(self.__computer_cards[0]))
+
+    def showAll(self):
+        print(self.__name + ': ' + str(self.__player_cards))
+        print('Computer: ' + str(self.__computer_cards))
 
     def get_first_cards(self):
-        pass
+        self.__player_cards=[[]]
+        self.hit('p')
+        self.hit('p')
+        self.hit('c')
+        self.hit('c')
 
     def is_busted(self):
-        pass
+        player=False
+        computer=False
+        if self.count('p')>21:
+            player=True
+        if self.count('c')>21:
+            computer=True
+        return (player,computer)
 
     def check(self):
-        pass
+        key=self.is_busted()[1]
+        if key==True:
+            return True
+        else:
+            if self.count('p')>self.count('c'):
+                return True
+            else:
+                return False
 
     def count(self, type):
             count=0
@@ -122,5 +166,7 @@ class BlackJackGame:
 
     def get_computer(self):
         return  self.__computer_cards
+
+
 
 
