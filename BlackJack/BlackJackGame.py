@@ -53,20 +53,23 @@ class BlackJackGame:
         if self.is_busted()[0]==True:
             return False
         else:
-            return self.check()
+            return self.stand()
 
     def insurance(self):
         if self.__computer_cards[0]!=12:
             return (False,False)
+        else:
+            self.__bet*=2
         if self.__cards[self.__computer_cards[1]][2]==10:
             return (True,True)
         else:
+            self.__bet*=2
             return (True,False)
 
     def split(self):
         if self.__player_cards==[]:
             return False
-        if self.__player_hand[0]==self.__player_hand[1]:
+        if self.__player_hand[0]==self.__player_hand[1] and len(self.__player_cards)==1:
             self.__player_cards=[[self.__player_hand[0]], [self.__player_hand[1]]]
             self.__player_hand=self.__player_cards[0]
             return True
@@ -74,12 +77,30 @@ class BlackJackGame:
             return False
 
     def show(self):
-        print(self.__name + ': ' + str(self.__player_cards))
-        print('Computer: ' + str(self.__computer_cards[0]))
+        player_cards=[]
+        computer_cards=[]
+        i=0
+        for hand in self.__player_cards:
+            player_cards.append([])
+            for card in hand:
+                player_cards[i].append(self.__cards[card][0])
+        for card in self.__computer_cards:
+            computer_cards.append(self.__cards[card][0])
+        print(self.__name + ': ' + str(player_cards))
+        print('Computer: ' + str(computer_cards[0]))
 
     def showAll(self):
-        print(self.__name + ': ' + str(self.__player_cards))
-        print('Computer: ' + str(self.__computer_cards))
+        player_cards = []
+        computer_cards = []
+        i = 0
+        for hand in self.__player_cards:
+            player_cards.append([])
+            for card in hand:
+                player_cards[i].append(self.__cards[card][0])
+        for card in self.__computer_cards:
+            computer_cards.append(self.__cards[card][0])
+        print(self.__name + ': ' + str(player_cards))
+        print('Computer: ' + str(computer_cards))
 
     def get_first_cards(self):
         self.__player_cards=[[]]
@@ -167,6 +188,49 @@ class BlackJackGame:
     def get_computer(self):
         return  self.__computer_cards
 
+    def get_bet(self):
+        return self.__bet
 
 
+if __name__=='__main__':
+    name=input('What is your name? \n')
+    bet=int(input('How much money want you to bet? \n'))
+    decks=int(input('How much decks do you want to play? \n'))
+    new_game=BlackJackGame(name,bet,decks)
+    new_game.get_first_cards()
+    result=False
+    while 1==1:
+        new_game.show()
+        print('hit')
+        print('stand')
+        print('insurance')
+        print('split')
+        print('double down (double)')
+        answer=input()
 
+        if answer=='hit':
+            new_game.hit('p')
+            if new_game.is_busted()[0]==True:
+                break
+        elif answer=='stand':
+            result=new_game.stand()
+            break
+        elif answer=='insurance':
+            insurance=new_game.insurance()
+            if insurance==(True,True):
+                result=True
+                break
+            elif insurance==(True,False):
+                result=False
+                break
+        elif answer=='split':
+            new_game.split()
+        elif answer=='double':
+            result=new_game.double_down()
+            break
+        new_game.show()
+    new_game.showAll()
+    if result==True:
+        print('You win: {}$'.format(new_game.get_bet()))
+    else:
+        print('You lose: {}$'.format(new_game.get_bet()))

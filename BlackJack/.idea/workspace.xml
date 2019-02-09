@@ -4,7 +4,6 @@
     <list default="true" id="565dbad7-7fa4-41c5-91c0-20f44b06d7ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/BlackJackGame.py" beforeDir="false" afterPath="$PROJECT_DIR$/BlackJackGame.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BlackJackTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/BlackJackTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlackJackUserInterface.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/BlackJackGame.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="168" selection-start-line="168" selection-end-line="168" />
+            <state relative-caret-position="221">
+              <caret line="61" column="25" lean-forward="true" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -26,8 +25,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BlackJackTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1615">
-              <caret line="95" column="30" lean-forward="true" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
+            <state relative-caret-position="175">
+              <caret line="102" column="54" selection-start-line="102" selection-start-column="54" selection-end-line="102" selection-end-column="54" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -57,9 +56,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/BlackJackUserInterface.py" />
         <option value="$PROJECT_DIR$/BlackJackTest.py" />
         <option value="$PROJECT_DIR$/BlackJackGame.py" />
-        <option value="$PROJECT_DIR$/BlackJackUserInterface.py" />
       </list>
     </option>
   </component>
@@ -122,8 +121,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for BlackJackTest.BlackJackTest.test_split">
-    <configuration name="Unittests for BlackJackTest.BlackJackTest.test_check" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.BlackJackGame">
+    <configuration name="BlackJackGame" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="BlackJack" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/BlackJackGame.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for BlackJackTest.BlackJackTest.test_gfc" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="BlackJack" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -133,7 +153,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;BlackJackTest.BlackJackTest.test_check&quot;" />
+      <option name="_new_target" value="&quot;BlackJackTest.BlackJackTest.test_gfc&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -148,20 +168,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;BlackJackTest.BlackJackTest.test_insurance&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for BlackJackTest.BlackJackTest.test_is_busted" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="BlackJack" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;BlackJackTest.BlackJackTest.test_is_busted&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -195,11 +201,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.BlackJackGame" />
+        <item itemvalue="Python tests.Unittests for BlackJackTest.BlackJackTest.test_gfc" />
         <item itemvalue="Python tests.Unittests for BlackJackTest.BlackJackTest.test_split" />
         <item itemvalue="Python tests.Unittests for BlackJackTest.BlackJackTest.test_insurance" />
         <item itemvalue="Python tests.Unittests for BlackJackTest.BlackJackTest.test_stand" />
-        <item itemvalue="Python tests.Unittests for BlackJackTest.BlackJackTest.test_check" />
-        <item itemvalue="Python tests.Unittests for BlackJackTest.BlackJackTest.test_is_busted" />
       </list>
     </recent_temporary>
   </component>
@@ -232,9 +238,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_for_BlackJackTest_BlackJackTest_test_stand - 2019.02.09 at 21h 20m 08s.xml">
-      <configuration name="Unittests for BlackJackTest.BlackJackTest.test_stand" configurationId="tests" />
-    </history-entry>
     <history-entry file="Unittests_for_BlackJackTest_BlackJackTest_test_stand - 2019.02.09 at 21h 20m 30s.xml">
       <configuration name="Unittests for BlackJackTest.BlackJackTest.test_stand" configurationId="tests" />
     </history-entry>
@@ -262,6 +265,9 @@
     <history-entry file="Unittests_for_BlackJackTest_BlackJackTest_test_split - 2019.02.09 at 22h 34m 20s.xml">
       <configuration name="Unittests for BlackJackTest.BlackJackTest.test_split" configurationId="tests" />
     </history-entry>
+    <history-entry file="Unittests_for_BlackJackTest_BlackJackTest_test_gfc - 2019.02.09 at 23h 49m 55s.xml">
+      <configuration name="Unittests for BlackJackTest.BlackJackTest.test_gfc" configurationId="tests" />
+    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -275,12 +281,12 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.44026187" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.44026187" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -300,23 +306,23 @@
     <option name="LAST_COMMIT_MESSAGE" value="ready tests" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/BlackJackUserInterface.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/BlackJackTest.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1615">
-          <caret line="95" column="30" lean-forward="true" selection-start-line="95" selection-start-column="30" selection-end-line="95" selection-end-column="30" />
+        <state relative-caret-position="175">
+          <caret line="102" column="54" selection-start-line="102" selection-start-column="54" selection-end-line="102" selection-end-column="54" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/BlackJackUserInterface.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/BlackJackGame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="168" selection-start-line="168" selection-end-line="168" />
+        <state relative-caret-position="221">
+          <caret line="61" column="25" lean-forward="true" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
         </state>
       </provider>
     </entry>

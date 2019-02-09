@@ -96,6 +96,13 @@ class BlackJackTest(unittest.TestCase):
         self.assertTrue(test.split() == False)
         self.assertTrue(len(test.get_player()) == 0)
 
+    def test_gfc(self):
+        test = BlackJackGame('test', 1, 1)
+        test.get_first_cards()
+        self.assertTrue(len(test.get_player()[0]) == 2)
+        self.assertTrue(len(test.get_computer()) == 2)
+
+
 
 if __name__ == '__main__':
         unittest.main()
