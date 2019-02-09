@@ -1,3 +1,5 @@
+import random
+
 class BlackJackGame():
     def __init__(self, name, bet, deck_amount):
         self.__name=name
@@ -11,8 +13,29 @@ class BlackJackGame():
         self.__player_weight=[]
         self.__computer_weight = 0
 
-    def hit(self):
-        pass
+    def hit(self,type):
+        if type=='p':
+            if self.__player_hand==self.__player_cards[0]:
+                card=random()*12
+                while(self.__cards[card][1]>0):
+                    card = random() * 12
+                self.__player_hand.append(card)
+                self.__player_cards[0].append(card)
+                self.__cards[card][1] -= 1
+
+            else:
+                card = random() * 12
+                while (self.__cards[card][1] > 0):
+                    card = random() * 12
+                self.__player_hand.append(card)
+                self.__player_cards[1].append(card)
+                self.__cards[card][1] -= 1
+        else:
+            card = random() * 12
+            while (self.__cards[card][1] > 0):
+                card = random() * 12
+            self.__computer_cards.append(card)
+            self.__cards[card][1] -= 1
 
     def stand(self):
         pass
@@ -39,24 +62,62 @@ class BlackJackGame():
         pass
 
     def count(self, type):
-        pass
+            count=0
+            if type=='p':
+                a=[]
+                for card in self.__player_hand:
+                    if card!=12:
+                        count += self.__cards[card][2]
+                    else:
+                        a.append(True)
+                        count+=11
+                for aa in a:
+                    if aa == True:
+                        if count > 21:
+                            count -= 10
+            else:
+                a = []
+                for card in self.__computer_cards:
+                    if card != 12:
+                        count += self.__cards[card][2]
+                    else:
+                        a.append(True)
+                        count += 11
+                for aa in a:
+                    if aa == True:
+                        if count > 21:
+                            count -= 10
+            return count
+
 
     def set_player_cards(self,*args):
-        pass
+        self.__player_cards.clear()
+        self.__player_hand.clear()
+        self.__cards.append([])
+        for card in args:
+            if card>12 or card<0:
+                self.__player_cards.clear()
+                self.__player_hand.clear()
+                break
+            else:
+                self.__player_cards[0].append(card)
+                self.__cards[card][1]-=1
+
 
     def set_computer_cards(self,*args):
-        pass
+        self.__computer_cards.clear()
+        for card in args:
+            if card>12 or card<0:
+                self.__computer_cards.clear()
+                break
+            else:
+                self.__computer_cards.append(card)
+                self.__cards[card][1] -= 1
 
     def get_player(self):
-        pass
+        return self.__player_cards
 
     def get_computer(self):
-        pass
-
-    def get_player_weight(self):
-        pass
-
-    def get_computer_weight(self):
-        pass
+        return  self.__computer_cards
 
 
