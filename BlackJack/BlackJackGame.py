@@ -40,12 +40,24 @@ class BlackJackGame:
             self.__cards[card][1] -= 1
 
     def stand(self):
-        if self.is_busted()[0]==True:
-            return False
+        if len(self.__player_cards)<2:
+            if self.is_busted()[0] == True:
+                return False
+            elif self.__player_cards[1]==self.__player_hand:
+                check=False
+                if self.check()==True:
+                    check==True
+                self.__player_hand=self.__player_cards[0]
+                if self.check()==True:
+                    check==True
+                return check
+            else:
+                while self.count('c') < 17:
+                    self.hit('c')
+                return self.check()
         else:
-            while self.count('c')<17:
-                self.hit('c')
-            return self.check()
+            self.__player_hand=self.__player_cards[1]
+
 
     def double_down(self):
         self.hit('p')
@@ -70,7 +82,11 @@ class BlackJackGame:
         if self.__player_cards==[]:
             return False
         if self.__player_hand[0]==self.__player_hand[1] and len(self.__player_cards)==1:
-            self.__player_cards=[[self.__player_hand[0]], [self.__player_hand[1]]]
+            self.__player_cards.clear()
+            self.__player_cards=[[],[]]
+            self.__player_cards[0].append(self.__player_hand[0])
+            self.__player_cards[1].append(self.__player_hand[1])
+            self.__player_hand.clear()
             self.__player_hand=self.__player_cards[0]
             return True
         else:
