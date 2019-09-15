@@ -1,6 +1,7 @@
 import numpy as np
 
 
+# algorytm wsadowego gradientu prostego
 class AdalineGD(object):
     
     
