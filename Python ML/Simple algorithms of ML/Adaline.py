@@ -48,4 +48,13 @@ class AdalineGD(object):
     def predict(self, X):
         return np.where(self.activation(self.net_input(X)) >= 0.0, 1, -1)
 
-            
+
+# algorytm stochastycznego spadku wzdłuż gradientu
+class AdalineSGD(object):
+    
+    
+    def __init__(self, eta=0.01, n_iter=10, shuffle=True, random_state=None):
+        self.eta = eta
+        self.n_iter = n_iter
+        
+
