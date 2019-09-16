@@ -94,7 +94,23 @@ def adalineGD_main(X,y):
     
     
 def adalineSGD_main(X,y):
-    pass
+    X_std = np.copy(X)
+    X_std[:,0] = (X[:, 0] - X[:, 0].mean()) / X[:, 0].std()
+    X_std[:,1] = (X[:, 1] - X[:, 1].mean()) / X[:, 1].std()
+    
+    ada = AdalineSGD(n_iter=15, eta=0.01, random_state=1)
+    ada.fit(X_std, y)
+    plot_decision_regions(X_std, y, classifier=ada)
+    plt.title('Adaline - sochastyczny spadek wzdłuż gradientu')
+    plt.xlabel('Długosć działki [standaryzowana]')
+    plt.ylabel('Długosć płatka [standaryzowana]')
+    plt.legend(loc='upper left')
+    plt.show()
+    
+    plt.plot(range(1, len(ada.cost_) + 1), ada.cost_, marker='o')
+    plt.xlabel('Epoki')
+    plt.ylabel('Średni koszt')
+    plt.show()
     
 
 def main():
@@ -121,8 +137,8 @@ def main():
     plt.ylabel('Długosć płatka [cm]')
     plt.show()
     
-    perceptron_main(X,y)
-    adalineGD_main(X,y)
+    #perceptron_main(X,y)
+    #adalineGD_main(X,y)
     adalineSGD_main(X,y)
     
     
