@@ -105,9 +105,25 @@ def main():
     plt.xlabel('Długosć działki [standaryzowana]')
     plt.ylabel('Długosć płatka [standaryzowana]')
     plt.legend(loc='upper left')
+    plt.show()
+    
+    
+    from sklearn.linear_model import LogisticRegression
+    lr = LogisticRegression(C=1000.0, random_state=1)
+    lr.fit(X_train_std, y_train)
+    plot_decision_regions(X_combined_std, y_combined, classifier=lr, 
+                          test_idx=range(105,150))
+    plt.xlabel('Długosć działki [standaryzowana]')
+    plt.ylabel('Długosć płatka [standaryzowana]')
+    plt.legend(loc='upper left')
     plt.tight_layout()
     plt.show()
-
+    
+    
+    print(lr.predict_proba(X_test_std[:3, :]))
+    print(lr.predict_proba(X_test_std[:3, :]).argmax(axis=1))
+    
+    
 
 if __name__ == '__main__':
     main()
